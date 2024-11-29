@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ category.title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        .category-title {
+            font-size: 2em;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+        .category-price {
+            font-size: 1.5em;
+            margin: 10px 0;
+            color: #777;
+        }
+        .category-image {
+            width: 80%;
+            max-width: 400px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .paypal-button {
+            text-decoration: none;
+            color: white;
+            background-color: #0070ba;
+            padding: 15px 25px;
+            border-radius: 5px;
+            display: inline-block;
+            font-size: 1em;
+            margin: 20px 0;
+            transition: background-color 0.3s;
+        }
+        .paypal-button:hover {
+            background-color: #005c99;
+        }
+        .instructions {
+            margin-top: 20px;
+            text-align: left;
+            line-height: 1.6;
+        }
+        .back-link {
+            text-decoration: none;
+            color: #4CAF50;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{{ category.title }}</h1>
+    </header>
+    <div class="container">
+        <div class="category-title">{{ category.title }}</div>
+        <div class="category-price">${{ category.price }}</div>
+        <img src="/static/images/{{ category.image }}" alt="{{ category.title }}" class="category-image">
+        
+        <!-- PayPal Button -->
+        <a class="paypal-button" href="https://paypal.me/ClemBoye?country.x=FR&locale.x=fr_FR" target="_blank">Pay Now with PayPal</a>
+        
+        <!-- Instructions Section -->
+        <div class="instructions">
+            <p><strong>After payment:</strong></p>
+            <p>Add our Snapchat account: <strong>item974</strong>.</p>
+            <p>Send a private message with proof of payment to be added to the private story corresponding to this category.</p>
+        </div>
+        
+        <!-- Back to Categories -->
+        <a class="back-link" href="/">Back to Categories</a>
+    </div>
+</body>
+</html>
